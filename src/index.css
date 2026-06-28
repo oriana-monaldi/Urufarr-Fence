@@ -1,0 +1,655 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500;700;800&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: Oswald, Arial, sans-serif;
+  background: #e9dfcd;
+  color: #2c2315;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#root {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.app-shell {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 24px 36px;
+}
+
+/* HERO */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 100vh;
+  width: 100vw;
+  left: 50%;
+  margin-left: -50vw;
+  padding-top: 24px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(18, 18, 18, 0.76),
+    rgba(18, 18, 18, 0.16),
+    rgba(18, 18, 18, 0.02)
+  );
+}
+
+.topbar-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 24px 70px 24px 20px;
+}
+
+.topbar-logo {
+  height: 290px;
+  width: auto;
+  margin-top: 16px;
+  margin-left: 40px;
+}
+
+.top-nav {
+  display: flex;
+  gap: 38px;
+  justify-content: center;
+  flex: 1;
+  max-width: 720px;
+}
+
+.top-nav a {
+  position: relative;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: #fff;
+  padding-bottom: 8px;
+}
+
+.top-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+.top-nav a:hover::after,
+.top-nav a.active::after {
+  width: 100%;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 330px 24px 60px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(4rem, 5.6vw, 6.4rem);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  color: #f7f1e6;
+}
+
+.hero-sub {
+  margin: 32px 0 0;
+  font-size: 1.8rem;
+  color: #f7f1e6;
+}
+
+/* QUALITY */
+
+.quality-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 38px;
+  max-width: 1180px;
+  margin: 20px auto 32px;
+}
+
+.quality-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(60, 45, 27, 0.45),
+    transparent
+  );
+}
+
+.quality-block h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: #3a2b1c;
+  text-align: center;
+}
+
+/* FEATURES */
+
+.feature-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  max-width: 1180px;
+  margin: 0 auto 40px;
+}
+
+.feature-item {
+  height: 150px;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+  border-right: 1px solid rgba(60, 45, 27, 0.14);
+}
+
+.feature-item:last-child {
+  border-right: none;
+}
+
+.feature-icon {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  background: rgba(58, 43, 28, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.feature-icon img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  display: block;
+}
+
+.feature-item p {
+  width: 100%;
+  min-height: 38px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1.25;
+  text-transform: uppercase;
+  color: #111;
+}
+/* LAND SECTION */
+
+/* LAND SECTION */
+
+.land-section {
+  max-width: 1180px;
+  height: 300px;
+  margin: 0 auto 44px;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 44px;
+  align-items: stretch;
+}
+
+.land-panel,
+.land-images,
+.horse-card {
+  height: 100%;
+  min-height: 0;
+}
+
+.land-panel {
+  color: #f4ebdc;
+  border-radius: 20px;
+  padding: 36px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 22px;
+  overflow: hidden;
+}
+
+.land-images {
+  width: 100%;
+}
+
+.horse-card {
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.horse-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.land-panel h3 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.08;
+  text-transform: uppercase;
+}
+
+.land-panel ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 14px;
+}
+
+.land-panel li {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.land-panel li::before {
+  content: "✓";
+  color: #d2b27c;
+  margin-right: 14px;
+}
+
+.horse-text {
+  position: absolute;
+  top: 50%;
+  right: 6%;
+  transform: translateY(-50%);
+  width: 38%;
+  text-align: center;
+  color: #fff;
+}
+
+.horse-text h2 {
+  margin: 0 0 14px;
+  font-size: 1.65rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.08;
+  text-transform: uppercase;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.55);
+}
+
+.horse-text p {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1.35;
+  text-transform: uppercase;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.55);
+}
+
+.horse-card {
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.horse-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.horse-text {
+  position: absolute;
+  top: 50%;
+  right: 6%;
+  transform: translateY(-50%);
+  width: 38%;
+  text-align: center;
+  color: #fff;
+}
+
+.horse-text h2 {
+  margin: 0 0 14px;
+  font-size: 1.65rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.08;
+  text-transform: uppercase;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.55);
+}
+
+.horse-text p {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1.35;
+  text-transform: uppercase;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.55);
+}
+
+.horse-card {
+  position: relative;
+  flex: 1;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.horse-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.horse-text {
+  position: absolute;
+  top: 56%;
+  right: 9%;
+  transform: translateY(-50%);
+  width: 38%;
+  text-align: center;
+  color: #fff;
+}
+
+.horse-text h2 {
+  margin: 0 0 16px;
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.08;
+  text-transform: uppercase;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.55);
+}
+
+.horse-text p {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.35;
+  text-transform: uppercase;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.55);
+}
+
+/* EXPERIENCE */
+
+.experience-section {
+  position: relative;
+  max-width: 1180px;
+  margin: 0 auto 50px;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.experience-section img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+}
+
+.experience-content {
+  position: absolute;
+  top: 50%;
+  left: 310px;
+  transform: translateY(-50%);
+  color: #fff;
+}
+
+.experience-content h2 {
+  margin: 0 0 10px;
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.experience-content p {
+  margin: 5px 0 0;
+  font-family: Arial, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.25;
+}
+
+/* CONTACT */
+
+.contact-section {
+  max-width: 1180px;
+  margin: 0 auto 36px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.contact-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-column h4 {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.contact-column p,
+.contact-column li {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.contact-column ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.contact-column li::before {
+  content: "✓";
+  color: #6b4d2d;
+  margin-right: 10px;
+}
+
+.language-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+}
+
+/* FOOTER */
+
+.page-footer {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  border-radius: 24px;
+  padding: 24px 28px;
+  background: #3c2a18;
+  color: #f6e9d7;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.page-footer span:last-child {
+  opacity: 0.85;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1240px) {
+  .feature-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .land-section {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 30px;
+    margin: 0 auto 50px;
+    max-width: 1180px;
+    align-items: stretch;
+  }
+
+  .land-panel,
+  .land-images,
+  .horse-card {
+    height: 320px;
+  }
+
+  .experience-content {
+    left: 260px;
+  }
+}
+
+@media (max-width: 860px) {
+  .topbar-overlay {
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  .topbar-logo {
+    height: 180px;
+    margin-left: 0;
+  }
+
+  .top-nav {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .hero-inner {
+    padding: 260px 20px 56px;
+  }
+
+  .feature-row,
+  .contact-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .horse-text {
+    width: 44%;
+    right: 5%;
+  }
+
+  .horse-text h2 {
+    font-size: 1.4rem;
+  }
+
+  .horse-text p {
+    font-size: 0.9rem;
+  }
+
+  .experience-content {
+    left: 200px;
+  }
+
+  .experience-content h2 {
+    font-size: 1.25rem;
+  }
+
+  .experience-content p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .app-shell {
+    padding: 0 16px 32px;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .feature-row,
+  .contact-section {
+    grid-template-columns: 1fr;
+  }
+
+  .horse-text {
+    width: 90%;
+    right: 5%;
+    top: 60%;
+  }
+
+  .experience-section img {
+    height: 220px;
+  }
+
+  .experience-content {
+    left: 24px;
+    right: 24px;
+  }
+
+  .page-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
