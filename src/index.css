@@ -29,6 +29,10 @@ a {
   text-decoration: none;
 }
 
+button {
+  font: inherit;
+}
+
 #root {
   min-height: 100vh;
   overflow: hidden;
@@ -72,11 +76,19 @@ a {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 2;
+  z-index: 20;
+
+  display: grid;
+  grid-template-columns: 280px 1fr 140px;
+  align-items: start;
+  gap: 20px;
+
+  padding: 24px 60px;
+}
+
+.topbar-left {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
-  padding: 24px 70px 24px 20px;
 }
 
 .topbar-logo {
@@ -88,18 +100,21 @@ a {
 
 .top-nav {
   display: flex;
-  gap: 38px;
+  align-items: center;
   justify-content: center;
-  flex: 1;
-  max-width: 720px;
+  gap: 38px;
+  padding-top: 22px;
+  min-width: 0;
 }
 
 .top-nav a {
   position: relative;
-  font-size: 1.2rem;
+  color: #ffffff;
+  font-size: 0.95rem;
   font-weight: 800;
-  letter-spacing: 0.22em;
-  color: #fff;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
   padding-bottom: 8px;
 }
 
@@ -110,7 +125,7 @@ a {
   bottom: 0;
   width: 0;
   height: 3px;
-  background: #fff;
+  background: #ffffff;
   transition: width 0.3s ease;
 }
 
@@ -119,12 +134,58 @@ a {
   width: 100%;
 }
 
+.language-button {
+  width: 130px;
+  height: 56px;
+  margin-top: 8px;
+
+  background: #5b371d;
+  color: #f6eddc;
+
+  border: none;
+  outline: none;
+  border-radius: 16px;
+
+  font-family: Oswald, Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.language-button:hover {
+  background: #6b4224;
+  transform: translateY(-2px);
+}
+
+.language-button:focus,
+.language-button:active {
+  background: #5b371d;
+  color: #f6eddc;
+  border: none;
+  outline: none;
+}
+
 .hero-inner {
   position: relative;
   z-index: 1;
   max-width: 1120px;
   margin: 0 auto;
   padding: 330px 24px 60px;
+}
+
+.hero-copy {
+  max-width: 720px;
 }
 
 .hero h1 {
@@ -138,6 +199,8 @@ a {
 .hero-sub {
   margin: 32px 0 0;
   font-size: 1.8rem;
+  line-height: 1.2;
+  max-width: 760px;
   color: #f7f1e6;
 }
 
@@ -170,6 +233,7 @@ a {
   letter-spacing: 0.22em;
   color: #3a2b1c;
   text-align: center;
+  text-transform: uppercase;
 }
 
 /* FEATURES */
@@ -222,14 +286,14 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-size: 0.88rem;
   font-weight: 800;
   letter-spacing: 0.06em;
   line-height: 1.25;
   text-transform: uppercase;
-  color: #111;
+  color: #111111;
 }
-/* LAND SECTION */
 
 /* LAND SECTION */
 
@@ -237,6 +301,7 @@ a {
   max-width: 1180px;
   height: 300px;
   margin: 0 auto 44px;
+
   display: grid;
   grid-template-columns: 420px 1fr;
   gap: 44px;
@@ -254,33 +319,22 @@ a {
   color: #f4ebdc;
   border-radius: 20px;
   padding: 36px;
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 22px;
+
   overflow: hidden;
 }
 
-.land-images {
-  width: 100%;
-}
-
-.horse-card {
-  position: relative;
-  width: 100%;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.horse-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
+.land-panel-header {
+  display: flex;
+  align-items: center;
 }
 
 .land-panel h3 {
@@ -311,34 +365,8 @@ a {
   margin-right: 14px;
 }
 
-.horse-text {
-  position: absolute;
-  top: 50%;
-  right: 6%;
-  transform: translateY(-50%);
-  width: 38%;
-  text-align: center;
-  color: #fff;
-}
-
-.horse-text h2 {
-  margin: 0 0 14px;
-  font-size: 1.65rem;
-  font-weight: 800;
-  letter-spacing: 2px;
-  line-height: 1.08;
-  text-transform: uppercase;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.55);
-}
-
-.horse-text p {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  font-size: 0.95rem;
-  font-weight: 800;
-  line-height: 1.35;
-  text-transform: uppercase;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.55);
+.land-images {
+  width: 100%;
 }
 
 .horse-card {
@@ -358,56 +386,12 @@ a {
 
 .horse-text {
   position: absolute;
-  top: 50%;
-  right: 6%;
-  transform: translateY(-50%);
-  width: 38%;
-  text-align: center;
-  color: #fff;
-}
-
-.horse-text h2 {
-  margin: 0 0 14px;
-  font-size: 1.65rem;
-  font-weight: 800;
-  letter-spacing: 2px;
-  line-height: 1.08;
-  text-transform: uppercase;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.55);
-}
-
-.horse-text p {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  font-size: 0.95rem;
-  font-weight: 800;
-  line-height: 1.35;
-  text-transform: uppercase;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.55);
-}
-
-.horse-card {
-  position: relative;
-  flex: 1;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.horse-card img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-}
-
-.horse-text {
-  position: absolute;
   top: 56%;
   right: 9%;
   transform: translateY(-50%);
   width: 38%;
   text-align: center;
-  color: #fff;
+  color: #ffffff;
 }
 
 .horse-text h2 {
@@ -452,7 +436,7 @@ a {
   top: 50%;
   left: 310px;
   transform: translateY(-50%);
-  color: #fff;
+  color: #ffffff;
 }
 
 .experience-content h2 {
@@ -475,50 +459,73 @@ a {
 
 .contact-section {
   max-width: 1180px;
-  margin: 0 auto 36px;
+  margin: 0 auto 40px;
+
+  padding: 35px 60px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  gap: 60px;
+
+  border-radius: 22px;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: #ffffff;
 }
 
 .contact-column {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  justify-content: flex-start;
+  gap: 8px;
 }
 
 .contact-column h4 {
-  margin: 0;
-  font-size: 1rem;
-  letter-spacing: 0.18em;
+  margin: 0 0 18px;
+
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
+
+  color: #ffffff;
 }
 
 .contact-column p,
-.contact-column li {
-  margin: 0;
-  font-size: 0.95rem;
+.contact-column li,
+.language-item {
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  line-height: 1.4;
+  margin: 4px 0;
+  margin-top: 8px;
+  font-size: 1rem;
 }
 
 .contact-column ul {
   margin: 0;
   padding: 0;
   list-style: none;
-  display: grid;
-  gap: 10px;
+}
+
+.contact-column li {
+  margin-bottom: 10px;
 }
 
 .contact-column li::before {
   content: "✓";
-  color: #6b4d2d;
-  margin-right: 10px;
+  color: #d2b27c;
+  margin-right: 12px;
 }
 
 .language-item {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-weight: 700;
 }
 
 /* FOOTER */
@@ -526,13 +533,17 @@ a {
 .page-footer {
   max-width: 1180px;
   margin: 0 auto;
+
   display: flex;
   justify-content: space-between;
   gap: 16px;
+
   border-radius: 24px;
   padding: 24px 28px;
+
   background: #3c2a18;
   color: #f6e9d7;
+
   font-weight: 700;
   letter-spacing: 0.12em;
 }
@@ -543,24 +554,39 @@ a {
 
 /* RESPONSIVE */
 
-@media (max-width: 1240px) {
+@media (max-width: 1180px) {
+  .topbar-overlay {
+    grid-template-columns: 220px 1fr 120px;
+    padding: 22px 35px;
+  }
+
+  .topbar-logo {
+    height: 220px;
+    margin-left: 20px;
+  }
+
+  .top-nav {
+    gap: 22px;
+  }
+
+  .top-nav a {
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+  }
+
+  .language-button {
+    width: 110px;
+    height: 48px;
+    font-size: 0.82rem;
+  }
+
   .feature-row {
     grid-template-columns: repeat(3, 1fr);
   }
 
   .land-section {
-    display: grid;
-    grid-template-columns: 420px 1fr;
+    grid-template-columns: 380px 1fr;
     gap: 30px;
-    margin: 0 auto 50px;
-    max-width: 1180px;
-    align-items: stretch;
-  }
-
-  .land-panel,
-  .land-images,
-  .horse-card {
-    height: 320px;
   }
 
   .experience-content {
@@ -570,27 +596,64 @@ a {
 
 @media (max-width: 860px) {
   .topbar-overlay {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    gap: 18px;
     padding: 20px;
-    flex-direction: column;
   }
 
   .topbar-logo {
-    height: 180px;
-    margin-left: 0;
+    height: 170px;
+    margin: 0;
   }
 
   .top-nav {
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 18px;
+    padding-top: 0;
+  }
+
+  .language-button {
+    margin-top: 0;
   }
 
   .hero-inner {
     padding: 260px 20px 56px;
   }
 
+  .hero h1 {
+    font-size: 3.4rem;
+  }
+
+  .hero-sub {
+    font-size: 1.3rem;
+  }
+
+  .quality-block {
+    gap: 18px;
+  }
+
+  .quality-block h2 {
+    font-size: 1.3rem;
+    letter-spacing: 0.12em;
+  }
+
   .feature-row,
   .contact-section {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .land-section {
+    height: auto;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .land-panel,
+  .land-images,
+  .horse-card {
+    height: 320px;
   }
 
   .horse-text {
@@ -624,6 +687,11 @@ a {
     padding: 0 16px 32px;
   }
 
+  .top-nav a {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+  }
+
   .hero h1 {
     font-size: 3rem;
   }
@@ -631,6 +699,12 @@ a {
   .feature-row,
   .contact-section {
     grid-template-columns: 1fr;
+  }
+
+  .land-panel,
+  .land-images,
+  .horse-card {
+    height: 360px;
   }
 
   .horse-text {

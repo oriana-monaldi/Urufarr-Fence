@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./index.css";
 
 import logo from "./assets/logo.png";
@@ -11,28 +12,142 @@ import logoPersonas from "./assets/logoPersonas.png";
 import logoPresupuesto from "./assets/logoPresupuesto.png";
 import experience from "./assets/experience.png";
 import fondo from "./assets/fondo.png";
+import fondoCampo from "./assets/fondoCampo.png";
 
-const navItems = ["HOME", "ABOUT US", "SERVICES", "PROJECTS", "CONTACT"];
+const featureItems = {
+  en: [
+    { icon: logoCasa, title: "RESIDENTIAL & COMMERCIAL FENCING" },
+    { icon: logoLupa, title: "DETAIL-ORIENTED WORK" },
+    { icon: logoCerca, title: "WOOD & WIRE FENCING" },
+    { icon: logoCheck, title: "INSTALLATION" },
+    { icon: logoPresupuesto, title: "REPAIR" },
+    { icon: logoPersonas, title: "CLEANING" },
+  ],
+  es: [
+    { icon: logoCasa, title: "CERCAS RESIDENCIALES Y COMERCIALES" },
+    { icon: logoLupa, title: "TRABAJO CUIDADO AL DETALLE" },
+    { icon: logoCerca, title: "CERCAS DE MADERA Y ALAMBRE" },
+    { icon: logoCheck, title: "INSTALACIÓN" },
+    { icon: logoPresupuesto, title: "REPARACIÓN" },
+    { icon: logoPersonas, title: "LIMPIEZA" },
+  ],
+};
 
-const featureItems = [
-  { icon: logoCasa, title: "RESIDENTIAL & COMMERCIAL FENCING" },
-  { icon: logoLupa, title: "DETAIL-ORIENTED WORK" },
-  { icon: logoCerca, title: "WOOD & WIRE FENCING" },
-  { icon: logoCheck, title: "INSTALLATION" },
-  { icon: logoPresupuesto, title: "REPAIR" },
-  { icon: logoPersonas, title: "CLEANING" },
-];
+const whyChooseItems = {
+  en: [
+    "Fully Insured",
+    "Free Quotes",
+    "Family Owned",
+    "Detail-Oriented Work",
+    "Quality Materials",
+    "Reliable & Professional Service",
+  ],
+  es: [
+    "Totalmente asegurados",
+    "Presupuestos gratis",
+    "Empresa familiar",
+    "Trabajo cuidado al detalle",
+    "Materiales de calidad",
+    "Servicio confiable y profesional",
+  ],
+};
 
-const whyChooseItems = [
-  "Fully Insured",
-  "Free Quotes",
-  "Family Owned",
-  "Detail-Oriented Work",
-  "Quality Materials",
-  "Reliable & Professional Service",
-];
+const text = {
+  en: {
+    nav: ["HOME", "ABOUT US", "SERVICES", "PROJECTS", "CONTACT"],
+    button: "ES / EN",
+    heroTitle: (
+      <>
+        STRONG FENCES.
+        <br />
+        LASTING TRUST.
+      </>
+    ),
+    heroSub: "Quality fencing solutions for homes, farms and businesses.",
+    quality: "BUILT WITH QUALITY. BUILT TO LAST.",
+    landTitle: (
+      <>
+        LAND & PROPERTY
+        <br />
+        MAINTENANCE
+      </>
+    ),
+    gardens: "Gardens",
+    fields: "Fields",
+    clearing: "Land Clearing",
+    horseTitle: (
+      <>
+        SPECIALIZED
+        <br />
+        FENCING
+      </>
+    ),
+    horseSub: (
+      <>
+        FOR HORSES, CATTLE,
+        <br />
+        CORRALS AND MORE
+      </>
+    ),
+    expTitle: "EXPERIENCE. COMMITMENT. RESULTS.",
+    exp1: "We take pride in every project, big or small.",
+    exp2: "Your satisfaction is our best reward.",
+    contactUs: "CONTACT US",
+    speak: "WE SPEAK",
+    why: "WHY CHOOSE US?",
+    footer: "STRONG FENCES. LASTING TRUST.",
+  },
+  es: {
+    nav: ["INICIO", "NOSOTROS", "SERVICIOS", "PROYECTOS", "CONTACTO"],
+    button: "ES / EN",
+    heroTitle: (
+      <>
+        CERCAS FUERTES.
+        <br />
+        CONFIANZA DURADERA.
+      </>
+    ),
+    heroSub:
+      "Soluciones de cercado de calidad para hogares, campos y negocios.",
+    quality: "CONSTRUIDO CON CALIDAD. HECHO PARA DURAR.",
+    landTitle: (
+      <>
+        MANTENIMIENTO DE
+        <br />
+        TERRENOS Y PROPIEDADES
+      </>
+    ),
+    gardens: "Jardines",
+    fields: "Campos",
+    clearing: "Limpieza de terrenos",
+    horseTitle: (
+      <>
+        CERCADO
+        <br />
+        ESPECIALIZADO
+      </>
+    ),
+    horseSub: (
+      <>
+        PARA CABALLOS, GANADO,
+        <br />
+        CORRALES Y MÁS
+      </>
+    ),
+    expTitle: "EXPERIENCIA. COMPROMISO. RESULTADOS.",
+    exp1: "Nos enorgullecemos de cada proyecto, grande o pequeño.",
+    exp2: "Tu satisfacción es nuestra mejor recompensa.",
+    contactUs: "CONTACTANOS",
+    speak: "HABLAMOS",
+    why: "¿POR QUÉ ELEGIRNOS?",
+    footer: "CERCAS FUERTES. CONFIANZA DURADERA.",
+  },
+};
 
 function App() {
+  const [lang, setLang] = useState<"en" | "es">("en");
+  const t = text[lang];
+
   return (
     <>
       <section
@@ -47,25 +162,31 @@ function App() {
           </div>
 
           <nav className="top-nav">
-            {navItems.map((item, index) => (
-              <a key={index} className={item === "HOME" ? "active" : ""}>
+            {t.nav.map((item, index) => (
+              <a key={index} className={index === 0 ? "active" : ""}>
                 {item}
               </a>
             ))}
           </nav>
+
+          <button
+            type="button"
+            className="language-button"
+            onClick={() => setLang(lang === "en" ? "es" : "en")}
+            style={{
+              background: "linear-gradient(180deg, #5a3a21 0%, #3a2414 100%)",
+              color: "#f6eddc",
+              border: "none",
+            }}
+          >
+            ES / EN
+          </button>
         </header>
 
         <div className="hero-inner">
           <div className="hero-copy">
-            <h1>
-              STRONG FENCES.
-              <br />
-              LASTING TRUST.
-            </h1>
-
-            <p className="hero-sub">
-              Quality fencing solutions for homes, farms and businesses.
-            </p>
+            <h1>{t.heroTitle}</h1>
+            <p className="hero-sub">{t.heroSub}</p>
           </div>
         </div>
       </section>
@@ -73,17 +194,16 @@ function App() {
       <div className="app-shell">
         <section className="quality-block">
           <div className="quality-line" />
-          <h2>BUILT WITH QUALITY. BUILT TO LAST.</h2>
+          <h2>{t.quality}</h2>
           <div className="quality-line" />
         </section>
 
         <section className="feature-row">
-          {featureItems.map((item, index) => (
+          {featureItems[lang].map((item, index) => (
             <div key={index} className="feature-item">
               <div className="feature-icon">
                 <img src={item.icon} alt={item.title} />
               </div>
-
               <p>{item.title}</p>
             </div>
           ))}
@@ -97,15 +217,13 @@ function App() {
             }}
           >
             <div className="land-panel-header">
-              <div>
-                <h3>LAND & PROPERTY MAINTENANCE</h3>
-              </div>
+              <h3>{t.landTitle}</h3>
             </div>
 
             <ul>
-              <li>Gardens</li>
-              <li>Fields</li>
-              <li>Land Clearing</li>
+              <li>{t.gardens}</li>
+              <li>{t.fields}</li>
+              <li>{t.clearing}</li>
             </ul>
           </div>
 
@@ -114,17 +232,8 @@ function App() {
               <img src={horses} alt="Horse fencing" />
 
               <div className="horse-text">
-                <h2>
-                  SPECIALIZED
-                  <br />
-                  FENCING
-                </h2>
-
-                <p>
-                  FOR HORSES, CATTLE,
-                  <br />
-                  CORRALS AND MORE
-                </p>
+                <h2>{t.horseTitle}</h2>
+                <p>{t.horseSub}</p>
               </div>
             </div>
           </div>
@@ -134,17 +243,21 @@ function App() {
           <img src={experience} alt="Experience" />
 
           <div className="experience-content">
-            <h2>EXPERIENCE. COMMITMENT. RESULTS.</h2>
-
-            <p>We take pride in every project, big or small.</p>
-
-            <p>Your satisfaction is our best reward.</p>
+            <h2>{t.expTitle}</h2>
+            <p>{t.exp1}</p>
+            <p>{t.exp2}</p>
           </div>
         </section>
 
-        <section className="contact-section">
+        <section
+          className="contact-section"
+          style={{
+            backgroundImage: `linear-gradient(rgba(20,20,20,.65), rgba(20,20,20,.65)), url(${fondoCampo})`,
+          }}
+        >
           <div className="contact-column">
-            <h4>CONTACT US</h4>
+            <h4>{t.contactUs}</h4>
+
             <p>470 469-7225</p>
             <p>786 444-0027</p>
             <p>678 334-9250</p>
@@ -152,7 +265,7 @@ function App() {
           </div>
 
           <div className="contact-column">
-            <h4>WE SPEAK</h4>
+            <h4>{t.speak}</h4>
 
             <div className="language-item">
               <span>🇺🇸</span>
@@ -166,10 +279,10 @@ function App() {
           </div>
 
           <div className="contact-column">
-            <h4>WHY CHOOSE US?</h4>
+            <h4>{t.why}</h4>
 
             <ul>
-              {whyChooseItems.map((item, index) => (
+              {whyChooseItems[lang].map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
             </ul>
@@ -178,7 +291,7 @@ function App() {
 
         <footer className="page-footer">
           <span>URUFARR FENCES</span>
-          <span>STRONG FENCES. LASTING TRUST.</span>
+          <span>{t.footer}</span>
         </footer>
       </div>
     </>
