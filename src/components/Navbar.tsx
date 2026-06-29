@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 type NavbarProps = {
@@ -8,7 +8,9 @@ type NavbarProps = {
 };
 
 function Navbar({ lang, setLang, nav }: NavbarProps) {
-  const links = ["/", "/about", "/services", "/projects", "/contact"];
+  const location = useLocation();
+
+  const links = ["/", "/about", "/services", "/gallery", "/contact"];
 
   return (
     <header className="topbar topbar-overlay">
@@ -21,7 +23,7 @@ function Navbar({ lang, setLang, nav }: NavbarProps) {
           <Link
             key={index}
             to={links[index]}
-            className={index === 0 ? "active" : ""}
+            className={location.pathname === links[index] ? "active" : ""}
           >
             {item}
           </Link>

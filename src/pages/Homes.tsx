@@ -55,7 +55,7 @@ const whyChooseItems = {
 
 const text = {
   en: {
-    nav: ["HOME", "ABOUT US", "SERVICES", "PROJECTS", "CONTACT"],
+    nav: ["HOME", "ABOUT US", "SERVICES", "GALLERY", "CONTACT"],
     heroTitle: (
       <>
         STRONG FENCES.
@@ -97,7 +97,7 @@ const text = {
     why: "WHY CHOOSE US?",
   },
   es: {
-    nav: ["INICIO", "NOSOTROS", "SERVICIOS", "PROYECTOS", "CONTACTO"],
+    nav: ["INICIO", "NOSOTROS", "SERVICIOS", "GALERÍA", "CONTACTO"],
     heroTitle: (
       <>
         CERCAS FUERTES.

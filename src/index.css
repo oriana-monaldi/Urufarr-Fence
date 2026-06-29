@@ -696,3 +696,316 @@ button {
     align-items: flex-start;
   }
 }
+
+/* ABOUT US */
+
+.about-hero {
+  min-height: 330px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.about-hero-content {
+  margin-left: 8%;
+  color: white;
+}
+
+.about-hero-content h1 {
+  font-size: 64px;
+  line-height: 1;
+  margin: 0;
+  letter-spacing: 2px;
+  font-weight: 900;
+}
+
+.about-line {
+  width: 120px;
+  height: 3px;
+  background: #b08a45;
+  margin: 22px 0;
+}
+
+.about-line.small {
+  width: 70px;
+  margin: 14px 0 28px;
+}
+
+.about-hero-content p {
+  font-size: 22px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.about-story {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 70px;
+  padding: 70px 8%;
+  background: #f7f4ee;
+  align-items: center;
+}
+
+.about-story-text h2 {
+  color: #143c2a;
+  font-size: 36px;
+  margin: 0;
+  font-weight: 900;
+}
+
+.about-story-text p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #1b1b1b;
+  margin-bottom: 28px;
+  max-width: 430px;
+  font-weight: 600;
+}
+
+.about-story-image img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+.about-values {
+  background: #eee8dc;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 38px 8%;
+  text-align: center;
+}
+
+.about-value-card {
+  padding: 0 40px;
+  border-right: 2px solid #d1bea0;
+}
+
+.about-value-card:last-child {
+  border-right: none;
+}
+
+.about-value-card img {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+.about-value-card h3 {
+  color: #143c2a;
+  font-size: 20px;
+  margin: 0 0 10px;
+  font-weight: 900;
+}
+
+.about-value-card p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    min-height: 280px;
+  }
+
+  .about-hero-content h1 {
+    font-size: 44px;
+  }
+
+  .about-hero-content p {
+    font-size: 18px;
+  }
+
+  .about-story {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 50px 6%;
+  }
+
+  .about-values {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-value-card {
+    border-right: none;
+    border-bottom: 2px solid #d1bea0;
+    padding-bottom: 30px;
+  }
+
+  .about-value-card:last-child {
+    border-bottom: none;
+  }
+}
+
+/* ================= ABOUT HERO ================= */
+
+.about-hero {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.about-hero-content {
+  position: absolute;
+  left: 8%;
+  top: 55%;
+  transform: translateY(-50%);
+
+  max-width: 650px;
+  color: #fff;
+  z-index: 2;
+}
+
+.about-hero-content h1 {
+  margin: 0;
+  font-size: 72px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.about-line {
+  width: 120px;
+  height: 4px;
+  background: #b58a43;
+  margin: 28px 0;
+}
+
+.about-line.small {
+  width: 80px;
+  margin: 18px 0 30px;
+}
+
+.about-hero-content p {
+  font-size: 24px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* ================= OUR STORY ================= */
+
+.about-story {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  align-items: center;
+  gap: 80px;
+
+  padding: 90px 8%;
+
+  background: #f6f2eb;
+}
+
+.about-story-text h2 {
+  margin: 0;
+  font-size: 40px;
+  color: #1b3c2a;
+  font-weight: 900;
+}
+
+.about-story-text p {
+  margin-bottom: 26px;
+
+  font-size: 18px;
+  line-height: 1.8;
+
+  color: #222;
+}
+
+.about-story-image img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+/* ================= VALUES ================= */
+
+.about-values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  background: #ebe4d6;
+
+  padding: 55px 8%;
+}
+
+.about-value-card {
+  text-align: center;
+  padding: 0 40px;
+
+  border-right: 2px solid #cfbea3;
+}
+
+.about-value-card:last-child {
+  border-right: none;
+}
+
+.about-value-card img {
+  width: 60px;
+  margin-bottom: 18px;
+}
+
+.about-value-card h3 {
+  margin-bottom: 12px;
+
+  color: #1b3c2a;
+
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.about-value-card p {
+  color: #444;
+  line-height: 1.6;
+  font-size: 17px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .about-hero-content {
+    left: 6%;
+    max-width: 90%;
+  }
+
+  .about-hero-content h1 {
+    font-size: 46px;
+  }
+
+  .about-hero-content p {
+    font-size: 18px;
+  }
+
+  .about-story {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 60px 6%;
+  }
+
+  .about-values {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .about-value-card {
+    border-right: none;
+    border-bottom: 2px solid #cfbea3;
+    padding-bottom: 35px;
+  }
+
+  .about-value-card:last-child {
+    border-bottom: none;
+  }
+}
