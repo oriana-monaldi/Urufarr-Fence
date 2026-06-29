@@ -2,6 +2,7 @@ import { useState } from "react";
 import "../index.css";
 
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 import hero from "../assets/fondoCampo.png";
 import story from "../assets/imagen2.jpeg";
@@ -65,7 +66,6 @@ function AboutUs() {
           <p>{t.aboutSubtitle}</p>
         </div>
       </section>
-
       <section className="about-story">
         <div className="about-story-text">
           <h2>{t.storyTitle}</h2>
@@ -74,43 +74,8 @@ function AboutUs() {
           <p>{t.story1}</p>
           <p>{t.story2}</p>
         </div>
-
-        <div className="about-story-image">
-          <img src={story} alt="Fence field" />
-        </div>
       </section>
-
-      <section className="about-values">
-        <div className="about-value-card">
-          <img src={logoCheck} alt="Fully insured" />
-          <h3>FULLY INSURED</h3>
-          <p>
-            Your property is in
-            <br />
-            safe hands.
-          </p>
-        </div>
-
-        <div className="about-value-card">
-          <img src={logoPersonas} alt="Family owned" />
-          <h3>FAMILY OWNED</h3>
-          <p>
-            We treat every project
-            <br />
-            like our own.
-          </p>
-        </div>
-
-        <div className="about-value-card">
-          <img src={logoPresupuesto} alt="Free quotes" />
-          <h3>FREE QUOTES</h3>
-          <p>
-            No obligation.
-            <br />
-            Fast and easy.
-          </p>
-        </div>
-      </section>
+      <Footer lang={lang} />{" "}
     </>
   );
 }

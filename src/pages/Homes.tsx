@@ -2,6 +2,7 @@ import { useState } from "react";
 import "../index.css";
 
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 import imgNavbar from "../assets/imgNavbar.png";
 import horses from "../assets/horses.png";
@@ -169,7 +170,6 @@ function Homes() {
           <h2>{t.quality}</h2>
           <div className="quality-line" />
         </section>
-
         <section className="feature-row">
           {featureItems[lang].map((item, index) => (
             <div key={index} className="feature-item">
@@ -180,7 +180,6 @@ function Homes() {
             </div>
           ))}
         </section>
-
         <section className="land-section">
           <div
             className="land-panel"
@@ -210,7 +209,6 @@ function Homes() {
             </div>
           </div>
         </section>
-
         <section className="experience-section">
           <img src={experience} alt="Experience" />
 
@@ -220,46 +218,7 @@ function Homes() {
             <p>{t.exp2}</p>
           </div>
         </section>
-
-        <section
-          className="contact-section"
-          style={{
-            backgroundImage: `linear-gradient(rgba(20,20,20,.65), rgba(20,20,20,.65)), url(${fondoCampo})`,
-          }}
-        >
-          <div className="contact-column">
-            <h4>{t.contactUs}</h4>
-
-            <p>470 469-7225</p>
-            <p>786 444-0027</p>
-            <p>678 334-9250</p>
-            <p>urufarrfences.adm@gmail.com</p>
-          </div>
-
-          <div className="contact-column">
-            <h4>{t.speak}</h4>
-
-            <div className="language-item">
-              <span>🇺🇸</span>
-              <span>ENGLISH</span>
-            </div>
-
-            <div className="language-item">
-              <span>🇪🇸</span>
-              <span>ESPAÑOL</span>
-            </div>
-          </div>
-
-          <div className="contact-column">
-            <h4>{t.why}</h4>
-
-            <ul>
-              {whyChooseItems[lang].map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
-          </div>
-        </section>
+        <Footer lang={lang} />{" "}
       </div>
     </>
   );
