@@ -288,11 +288,6 @@ function App() {
             </ul>
           </div>
         </section>
-
-        <footer className="page-footer">
-          <span>URUFARR FENCES</span>
-          <span>{t.footer}</span>
-        </footer>
       </div>
     </>
   );
