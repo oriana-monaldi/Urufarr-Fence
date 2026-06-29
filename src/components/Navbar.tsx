@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
 
@@ -8,40 +9,47 @@ type NavbarProps = {
 };
 
 function Navbar({ lang, setLang, nav }: NavbarProps) {
+  const [open, setOpen] = useState(false);
   const location = useLocation();
 
   const links = ["/", "/about", "/services", "/gallery", "/contact"];
 
   return (
     <header className="topbar topbar-overlay">
-      <div className="topbar-left">
+      <div className="topbar-logo-wrapper">
         <img className="topbar-logo" src={logo} alt="Urufarr Fences" />
       </div>
 
-      <nav className="top-nav">
+      <nav className={`top-nav ${open ? "open" : ""}`}>
         {nav.map((item, index) => (
           <Link
             key={index}
             to={links[index]}
             className={location.pathname === links[index] ? "active" : ""}
+            onClick={() => setOpen(false)}
           >
             {item}
           </Link>
         ))}
       </nav>
 
-      <button
-        type="button"
-        className="language-button"
-        onClick={() => setLang(lang === "en" ? "es" : "en")}
-        style={{
-          background: "linear-gradient(180deg, #5a3a21 0%, #3a2414 100%)",
-          color: "#f6eddc",
-          border: "none",
-        }}
-      >
-        ES / EN
-      </button>
+      <div className="navbar-actions">
+        <button
+          type="button"
+          className="language-button desktop-language"
+          onClick={() => setLang(lang === "en" ? "es" : "en")}
+        >
+          ES / EN
+        </button>
+
+        <button
+          type="button"
+          className="hamburger-button"
+          onClick={() => setOpen(!open)}
+        >
+          ☰
+        </button>
+      </div>
     </header>
   );
 }

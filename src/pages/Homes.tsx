@@ -14,12 +14,10 @@ import logoPresupuesto from "../assets/logoPresupuesto.png";
 import horses from "../assets/horses.png";
 import experience from "../assets/experience.png";
 import fondo from "../assets/fondo.png";
-import footer from "../assets/footer.png";
 
 const featureItems = {
   en: [
     { icon: logoCasa, title: "RESIDENTIAL & COMMERCIAL FENCING" },
-    { icon: logoLupa, title: "DETAIL-ORIENTED WORK" },
     { icon: logoCerca, title: "WOOD & WIRE FENCING" },
     { icon: logoCheck, title: "INSTALLATION" },
     { icon: logoPresupuesto, title: "REPAIR" },
@@ -131,11 +129,12 @@ function Homes() {
       >
         <Navbar lang={lang} setLang={setLang} nav={t.nav} />
 
-        <div className="hero-inner">
-          <div className="hero-copy">
-            <h1>{t.heroTitle}</h1>
-            <p className="hero-sub">{t.heroSub}</p>
-          </div>
+        <div className="page-hero-content">
+          <h1>{t.heroTitle}</h1>
+
+          <div className="page-line" />
+
+          <p>{t.heroSub}</p>
         </div>
       </section>
 

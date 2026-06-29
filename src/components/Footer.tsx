@@ -11,9 +11,7 @@ const footerText = {
     why: "WHY CHOOSE US?",
     items: [
       "Fully Insured",
-      "Free Quotes",
       "Family Owned",
-      "Detail-Oriented Work",
       "Quality Materials",
       "Reliable & Professional Service",
     ],
@@ -24,7 +22,6 @@ const footerText = {
     why: "¿POR QUÉ ELEGIRNOS?",
     items: [
       "Totalmente asegurados",
-      "Presupuestos gratis",
       "Empresa familiar",
       "Trabajo cuidado al detalle",
       "Materiales de calidad",
@@ -45,9 +42,9 @@ function Footer({ lang }: FooterProps) {
     >
       <div className="contact-column">
         <h4>{t.contactUs}</h4>
-        <p>470 469-7225</p>
-        <p>786 444-0027</p>
-        <p>678 334-9250</p>
+        <p>+1 (770) 470 469-7225</p>
+        <p>+1 (770) 786 444-0027</p>
+        <p>+1 (770) 678 334-9250</p>
         <p>urufarrfences.adm@gmail.com</p>
       </div>
 

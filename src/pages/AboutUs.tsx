@@ -1,11 +1,12 @@
 import { useState } from "react";
 import "../index.css";
 
-import Navbar from "../components/Navbar";
+import PageHero from "../components/Hero";
 import Footer from "../components/Footer";
-
+import fondo from "../assets/fondo.png";
 import hero from "../assets/fondoCampo.png";
 import story from "../assets/imagen2.jpeg";
+import story2 from "../assets/imagen5.jpeg";
 
 import logoCheck from "../assets/logoCheck.png";
 import logoPersonas from "../assets/logoPersonas.png";
@@ -13,9 +14,9 @@ import logoPresupuesto from "../assets/logoPresupuesto.png";
 
 const text = {
   en: {
-    nav: ["HOME", "ABOUT US", "SERVICES", "PROJECTS", "CONTACT"],
-    aboutTitle: "ABOUT US",
-    aboutSubtitle: (
+    nav: ["HOME", "ABOUT US", "SERVICES", "GALLERY", "CONTACT"],
+    title: "ABOUT US",
+    subtitle: (
       <>
         A family business committed
         <br />
@@ -29,9 +30,9 @@ const text = {
       "With years of experience, we take pride in our detailed, reliable work and in building strong, long-lasting relationships with our customers.",
   },
   es: {
-    nav: ["INICIO", "NOSOTROS", "SERVICIOS", "PROYECTOS", "CONTACTO"],
-    aboutTitle: "NOSOTROS",
-    aboutSubtitle: (
+    nav: ["INICIO", "NOSOTROS", "SERVICIOS", "GALERÍA", "CONTACTO"],
+    title: "NOSOTROS",
+    subtitle: (
       <>
         Una empresa familiar comprometida
         <br />
@@ -52,30 +53,58 @@ function AboutUs() {
 
   return (
     <>
-      <section
-        className="about-hero"
-        style={{
-          backgroundImage: `linear-gradient(to right, rgba(0,0,0,.75), rgba(0,0,0,.2)), url(${hero})`,
-        }}
-      >
-        <Navbar lang={lang} setLang={setLang} nav={t.nav} />
+      <PageHero
+        hero={hero}
+        lang={lang}
+        setLang={setLang}
+        nav={t.nav}
+        title={t.title}
+        subtitle={t.subtitle}
+      />
 
-        <div className="about-hero-content">
-          <h1>{t.aboutTitle}</h1>
-          <div className="about-line" />
-          <p>{t.aboutSubtitle}</p>
-        </div>
-      </section>
-      <section className="about-story">
-        <div className="about-story-text">
-          <h2>{t.storyTitle}</h2>
-          <div className="about-line small" />
+      <main className="page-content">
+        <section className="about-story">
+          <div className="about-story-text">
+            <h2>{t.storyTitle}</h2>
+            <div className="page-line" />
 
-          <p>{t.story1}</p>
-          <p>{t.story2}</p>
-        </div>
-      </section>
-      <Footer lang={lang} />{" "}
+            <p>{t.story1}</p>
+            <p>{t.story2}</p>
+          </div>
+
+          <div className="about-story-image">
+            <img src={story} alt="Fence field" />
+            <img src={story2} alt="Fence field 2" />
+          </div>
+        </section>
+
+        <section
+          className="about-values"
+          style={{
+            backgroundImage: `url(${fondo})`,
+          }}
+        >
+          <div className="about-value-card">
+            <img src={logoCheck} alt="Fully insured" />
+            <h3>FULLY INSURED</h3>
+            <p>Your property is in safe hands.</p>
+          </div>
+
+          <div className="about-value-card">
+            <img src={logoPersonas} alt="Family owned" />
+            <h3>FAMILY OWNED</h3>
+            <p>We treat every project like our own.</p>
+          </div>
+
+          <div className="about-value-card">
+            <img src={logoPresupuesto} alt="Free quotes" />
+            <h3>FREE QUOTES</h3>
+            <p>No obligation. Fast and easy.</p>
+          </div>
+        </section>
+      </main>
+
+      <Footer lang={lang} />
     </>
   );
 }
