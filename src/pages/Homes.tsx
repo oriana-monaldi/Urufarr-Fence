@@ -5,16 +5,16 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 import imgNavbar from "../assets/imgNavbar.png";
-import horses from "../assets/horses.png";
 import logoCasa from "../assets/logoCasa.png";
 import logoCerca from "../assets/logoCerca.png";
 import logoCheck from "../assets/logoCheck.png";
 import logoLupa from "../assets/logoLupa.png";
 import logoPersonas from "../assets/logoPersonas.png";
 import logoPresupuesto from "../assets/logoPresupuesto.png";
+import horses from "../assets/horses.png";
 import experience from "../assets/experience.png";
 import fondo from "../assets/fondo.png";
-import fondoCampo from "../assets/fondoCampo.png";
+import footer from "../assets/footer.png";
 
 const featureItems = {
   en: [
@@ -32,25 +32,6 @@ const featureItems = {
     { icon: logoCheck, title: "INSTALACIÓN" },
     { icon: logoPresupuesto, title: "REPARACIÓN" },
     { icon: logoPersonas, title: "LIMPIEZA" },
-  ],
-};
-
-const whyChooseItems = {
-  en: [
-    "Fully Insured",
-    "Free Quotes",
-    "Family Owned",
-    "Detail-Oriented Work",
-    "Quality Materials",
-    "Reliable & Professional Service",
-  ],
-  es: [
-    "Totalmente asegurados",
-    "Presupuestos gratis",
-    "Empresa familiar",
-    "Trabajo cuidado al detalle",
-    "Materiales de calidad",
-    "Servicio confiable y profesional",
   ],
 };
 
@@ -93,9 +74,6 @@ const text = {
     expTitle: "EXPERIENCE. COMMITMENT. RESULTS.",
     exp1: "We take pride in every project, big or small.",
     exp2: "Your satisfaction is our best reward.",
-    contactUs: "CONTACT US",
-    speak: "WE SPEAK",
-    why: "WHY CHOOSE US?",
   },
   es: {
     nav: ["INICIO", "NOSOTROS", "SERVICIOS", "GALERÍA", "CONTACTO"],
@@ -136,9 +114,6 @@ const text = {
     expTitle: "EXPERIENCIA. COMPROMISO. RESULTADOS.",
     exp1: "Nos enorgullecemos de cada proyecto, grande o pequeño.",
     exp2: "Tu satisfacción es nuestra mejor recompensa.",
-    contactUs: "CONTACTANOS",
-    speak: "HABLAMOS",
-    why: "¿POR QUÉ ELEGIRNOS?",
   },
 };
 
@@ -170,6 +145,7 @@ function Homes() {
           <h2>{t.quality}</h2>
           <div className="quality-line" />
         </section>
+
         <section className="feature-row">
           {featureItems[lang].map((item, index) => (
             <div key={index} className="feature-item">
@@ -180,6 +156,7 @@ function Homes() {
             </div>
           ))}
         </section>
+
         <section className="land-section">
           <div
             className="land-panel"
@@ -209,6 +186,7 @@ function Homes() {
             </div>
           </div>
         </section>
+
         <section className="experience-section">
           <img src={experience} alt="Experience" />
 
@@ -218,8 +196,9 @@ function Homes() {
             <p>{t.exp2}</p>
           </div>
         </section>
-        <Footer lang={lang} />{" "}
       </div>
+
+      <Footer lang={lang} />
     </>
   );
 }

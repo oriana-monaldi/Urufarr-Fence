@@ -1,4 +1,4 @@
-import fondoCampo from "../assets/fondoCampo.png";
+import footer from "../assets/footer.png";
 
 type FooterProps = {
   lang: "en" | "es";
@@ -37,10 +37,10 @@ function Footer({ lang }: FooterProps) {
   const t = footerText[lang];
 
   return (
-    <section
+    <footer
       className="contact-section"
       style={{
-        backgroundImage: `linear-gradient(rgba(20,20,20,.65), rgba(20,20,20,.65)), url(${fondoCampo})`,
+        backgroundImage: `linear-gradient(rgba(20,20,20,.65), rgba(20,20,20,.65)), url(${footer})`,
       }}
     >
       <div className="contact-column">
@@ -74,7 +74,7 @@ function Footer({ lang }: FooterProps) {
           ))}
         </ul>
       </div>
-    </section>
+    </footer>
   );
 }
 
