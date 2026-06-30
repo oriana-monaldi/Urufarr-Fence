@@ -266,9 +266,11 @@ textarea {
 }
 
 .feature-icon img {
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   object-fit: contain;
+
+  filter: brightness(0) invert(1);
 }
 
 .feature-item p {
