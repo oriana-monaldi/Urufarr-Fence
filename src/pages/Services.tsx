@@ -1,10 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../index.css";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import PageHero from "../components/Hero";
 import Footer from "../components/Footer";
 
 import hero from "../assets/fondoService.png";
+
+import service1 from "../assets/service1.png";
+import service2 from "../assets/service2.png";
+import service3 from "../assets/service3.png";
 
 const text = {
   en: {
@@ -17,7 +24,9 @@ const text = {
         for every property.
       </>
     ),
+    servicesTitle: "OUR SERVICES",
   },
+
   es: {
     nav: ["INICIO", "NOSOTROS", "SERVICIOS", "GALERÍA", "CONTACTO"],
     title: "SERVICIOS",
@@ -28,11 +37,21 @@ const text = {
         para todo tipo de propiedades.
       </>
     ),
+    servicesTitle: "NUESTROS SERVICIOS",
   },
 };
 
 function Services() {
   const [lang, setLang] = useState<"en" | "es">("en");
+
+  useEffect(() => {
+    AOS.init({
+      duration: 900,
+      once: true,
+      easing: "ease-out",
+    });
+  }, []);
+
   const t = text[lang];
 
   return (
@@ -46,24 +65,34 @@ function Services() {
         subtitle={t.subtitle}
       />
 
-      <main className="page-content">
-        <section className="services-grid">
-          <div className="service-card">
-            <h3>Residential Fencing</h3>
-            <p>High-quality fencing solutions for homes.</p>
-          </div>
+      <section className="quality-block">
+        <div className="quality-line" />
+        <h2>{t.servicesTitle}</h2>
+        <div className="quality-line" />
+      </section>
 
-          <div className="service-card">
-            <h3>Commercial Fencing</h3>
-            <p>Reliable fencing for commercial properties.</p>
-          </div>
+      <section className="services-grid">
+        <div className="service-item" data-aos="fade-up">
+          <img src={service1} alt="Installation" />
+          <span className="service-title">
+            {lang === "en" ? "INSTALLATION" : "INSTALACIÓN"}
+          </span>
+        </div>
 
-          <div className="service-card">
-            <h3>Wood & Wire Fences</h3>
-            <p>Durable fences for farms, homes and businesses.</p>
-          </div>
-        </section>
-      </main>
+        <div className="service-item" data-aos="fade-up" data-aos-delay="200">
+          <img src={service2} alt="Repair" />
+          <span className="service-title">
+            {lang === "en" ? "REPAIR" : "REPARACIÓN"}
+          </span>
+        </div>
+
+        <div className="service-item" data-aos="fade-up" data-aos-delay="400">
+          <img src={service3} alt="Cleaning" />
+          <span className="service-title">
+            {lang === "en" ? "CLEANING" : "LIMPIEZA"}
+          </span>
+        </div>
+      </section>
 
       <Footer lang={lang} />
     </>

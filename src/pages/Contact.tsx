@@ -4,7 +4,7 @@ import "../index.css";
 import PageHero from "../components/Hero";
 import Footer from "../components/Footer";
 
-import hero from "../assets/imagen1.jpeg";
+import hero from "../assets/imagen5.jpeg";
 import contactImage from "../assets/imagen2.jpeg";
 
 const text = {
@@ -27,8 +27,6 @@ const text = {
     emailPlaceholder: "Email",
     message: "Message",
     button: "SEND MESSAGE",
-    freeQuotes: "FREE QUOTES",
-    freeText: "No obligation. We'll be happy to answer your questions.",
   },
 
   es: {
@@ -56,6 +54,27 @@ const text = {
 };
 
 function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const subject = "Contacto desde la web";
+    const body = `
+Nombre: ${name}
+Email: ${email}
+
+Mensaje:
+${message}
+    `;
+
+    window.location.href = `mailto:orimonaldi@gmail.com?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(body)}`;
+  };
+
   const [lang, setLang] = useState<"en" | "es">("en");
   const t = text[lang];
 
@@ -97,30 +116,40 @@ function Contact() {
 
           <div className="contact-form-card">
             <h2>{t.formTitle}</h2>
+            {/* FORM SECTION */}
+            <section className="contact-section">
+              <div className="contact-container">
+                <h2>GET IN TOUCH</h2>
 
-            <form>
-              <input type="text" placeholder={t.name} />
+                <form onSubmit={handleSubmit} className="contact-form">
+                  <input
+                    type="text"
+                    placeholder="Your name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                  />
 
-              <input type="text" placeholder={t.phone} />
+                  <input
+                    type="email"
+                    placeholder="Your email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
 
-              <input type="email" placeholder={t.emailPlaceholder} />
+                  <textarea
+                    placeholder="Your message"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    required
+                  />
 
-              <textarea placeholder={t.message}></textarea>
-
-              <button>{t.button}</button>
-            </form>
+                  <button type="submit">SEND MESSAGE</button>
+                </form>
+              </div>
+            </section>
           </div>
-        </section>
-
-        <section className="contact-bottom-card">
-          <div className="quote-box">
-            <div>
-              <h2>{t.freeQuotes}</h2>
-              <p>{t.freeText}</p>
-            </div>
-          </div>
-
-          <img src={contactImage} alt="Fence" />
         </section>
       </main>
 
