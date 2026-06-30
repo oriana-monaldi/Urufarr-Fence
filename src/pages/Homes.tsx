@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "../index.css";
 
 import Navbar from "../components/Navbar";
@@ -14,6 +13,12 @@ import logoPresupuesto from "../assets/logoPresupuesto.png";
 import horses from "../assets/horses.png";
 import experience from "../assets/experience.png";
 import fondo from "../assets/fondo.png";
+
+type PageProps = {
+  lang: "en" | "es";
+  setLang: (lang: "en" | "es") => void;
+};
+
 const featureItems = {
   en: [
     { icon: logoCasa, title: "RESIDENTIAL & COMMERCIAL FENCING" },
@@ -32,6 +37,7 @@ const featureItems = {
     { icon: logoPersonas, title: "LIMPIEZA" },
   ],
 };
+
 const text = {
   en: {
     nav: ["HOME", "ABOUT US", "SERVICES", "GALLERY", "CONTACT"],
@@ -114,8 +120,7 @@ const text = {
   },
 };
 
-function Homes() {
-  const [lang, setLang] = useState<"en" | "es">("en");
+function Homes({ lang, setLang }: PageProps) {
   const t = text[lang];
 
   return (
@@ -130,9 +135,7 @@ function Homes() {
 
         <div className="page-hero-content">
           <h1>{t.heroTitle}</h1>
-
           <div className="page-line" />
-
           <p>{t.heroSub}</p>
         </div>
       </section>
@@ -162,9 +165,7 @@ function Homes() {
               backgroundImage: `linear-gradient(rgba(45,28,12,.78), rgba(45,28,12,.78)), url(${fondo})`,
             }}
           >
-            <div className="land-panel-header">
-              <h3>{t.landTitle}</h3>
-            </div>
+            <h3>{t.landTitle}</h3>
 
             <ul>
               <li>{t.gardens}</li>

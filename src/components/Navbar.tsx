@@ -4,7 +4,7 @@ import logo from "../assets/logo.png";
 
 type NavbarProps = {
   lang: "en" | "es";
-  setLang: React.Dispatch<React.SetStateAction<"en" | "es">>;
+  setLang: (lang: "en" | "es") => void;
   nav: string[];
 };
 
@@ -13,6 +13,10 @@ function Navbar({ lang, setLang, nav }: NavbarProps) {
   const location = useLocation();
 
   const links = ["/", "/about", "/services", "/gallery", "/contact"];
+
+  const handleLanguage = () => {
+    setLang(lang === "en" ? "es" : "en");
+  };
 
   return (
     <header className="topbar topbar-overlay">
@@ -37,9 +41,9 @@ function Navbar({ lang, setLang, nav }: NavbarProps) {
         <button
           type="button"
           className="language-button desktop-language"
-          onClick={() => setLang(lang === "en" ? "es" : "en")}
+          onClick={handleLanguage}
         >
-          ES / EN
+          {lang === "en" ? "ES / EN" : "EN / ES"}
         </button>
 
         <button

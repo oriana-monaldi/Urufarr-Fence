@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "../index.css";
 
 import PageHero from "../components/Hero";
@@ -14,6 +13,11 @@ import gallery8 from "../assets/imagen8.jpeg";
 import gallery7 from "../assets/imagen7.jpeg";
 import gallery9 from "../assets/imagen9.png";
 import gallery10 from "../assets/imagen10.jpeg";
+
+type PageProps = {
+  lang: "en" | "es";
+  setLang: (lang: "en" | "es") => void;
+};
 
 const text = {
   en: {
@@ -40,8 +44,7 @@ const text = {
   },
 };
 
-function Gallery() {
-  const [lang, setLang] = useState<"en" | "es">("en");
+function Gallery({ lang, setLang }: PageProps) {
   const t = text[lang];
 
   return (
@@ -57,41 +60,21 @@ function Gallery() {
 
       <main className="page-content">
         <section className="gallery-grid">
-          <div className="gallery-card">
-            <img src={gallery7} alt="Gallery 1" />
-          </div>
-
-          <div className="gallery-card">
-            <img src={gallery2} alt="Gallery 2" />
-          </div>
-
-          <div className="gallery-card">
-            <img src={gallery1} alt="Gallery 3" />
-          </div>
-
-          <div className="gallery-card">
-            <img src={gallery4} alt="Gallery 4" />
-          </div>
-
-          <div className="gallery-card">
-            <img src={gallery3} alt="Gallery 3" />
-          </div>
-
-          <div className="gallery-card">
-            <img src={gallery10} alt="Gallery 10" />
-          </div>
-
-          <div className="gallery-card">
-            <img src={gallery9} alt="Gallery 8" />
-          </div>
-
-          <div className="gallery-card">
-            <img src={gallery8} alt="Gallery 8" />
-          </div>
-
-          <div className="gallery-card">
-            <img src={gallery5} alt="Gallery 8" />
-          </div>
+          {[
+            gallery7,
+            gallery2,
+            gallery1,
+            gallery4,
+            gallery3,
+            gallery10,
+            gallery9,
+            gallery8,
+            gallery5,
+          ].map((img, index) => (
+            <div className="gallery-card" key={index}>
+              <img src={img} alt={`Gallery ${index + 1}`} />
+            </div>
+          ))}
         </section>
       </main>
 

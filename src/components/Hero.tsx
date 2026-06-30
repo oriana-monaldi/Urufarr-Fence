@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 type PageHeroProps = {
   hero: string;
   lang: "en" | "es";
-  setLang: React.Dispatch<React.SetStateAction<"en" | "es">>;
+  setLang: (lang: "en" | "es") => void;
   nav: string[];
   title: string;
   subtitle: React.ReactNode;
@@ -28,7 +28,9 @@ function PageHero({
 
       <div className="page-hero-content">
         <h1>{title}</h1>
+
         <div className="page-line" />
+
         <p>{subtitle}</p>
       </div>
     </section>

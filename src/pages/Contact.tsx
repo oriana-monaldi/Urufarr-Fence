@@ -12,6 +12,11 @@ import logoEmail from "../assets/logoEmail.png";
 import logoPersona from "../assets/logoPersona.png";
 import logoMensaje from "../assets/logoMensaje.png";
 
+type PageProps = {
+  lang: "en" | "es";
+  setLang: (lang: "en" | "es") => void;
+};
+
 const text = {
   en: {
     nav: ["HOME", "ABOUT US", "SERVICES", "GALLERY", "CONTACT"],
@@ -55,8 +60,7 @@ const text = {
   },
 };
 
-function Contact() {
-  const [lang, setLang] = useState<"en" | "es">("en");
+function Contact({ lang, setLang }: PageProps) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -68,18 +72,14 @@ function Contact() {
     e.preventDefault();
 
     const subject = "Contacto desde la web";
-    const body = `
-Nombre: ${name}
+    const body = `Nombre: ${name}
 Teléfono: ${phone}
 Email: ${email}
 
 Mensaje:
-${message}
-`;
+${message}`;
 
-    window.location.href = `mailto:urufarrfences.adm@gmail.com?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:urufarrfences.adm@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   return (
@@ -136,7 +136,7 @@ ${message}
               </a>
 
               <a
-                href="https://www.facebook.com/people/Urufarr-Fences-LLC/61590426403039/?rdid=KJ5TC4GrgI2IIPsp&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BQUuxg1PP%2F"
+                href="https://www.facebook.com/people/Urufarr-Fences-LLC/61590426403039/"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -152,7 +152,11 @@ ${message}
             <form onSubmit={handleSubmit} className="contact-form">
               <div className="form-row">
                 <div className="input-box">
-                  <img src={logoPersona} alt="" className="input-icon" />
+                  <img
+                    src={logoPersona}
+                    alt=""
+                    className="input-icon person-icon"
+                  />
                   <input
                     type="text"
                     placeholder={t.name}
@@ -161,6 +165,7 @@ ${message}
                     required
                   />
                 </div>
+
                 <div className="input-box">
                   <img src={logoEmail} alt="" className="input-icon" />
                   <input
