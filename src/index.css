@@ -441,12 +441,13 @@ textarea {
 /* ================= ABOUT US ================= */
 
 .about-story {
-  max-width: 1500px;
-  margin: 35px auto 35px;
+  max-width: 1400px; /* el mismo ancho que about-values */
+  width: 100%;
+  margin: 0 auto 70px;
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
   align-items: center;
-  gap: 60px;
 }
 
 .about-story-text {
@@ -487,9 +488,11 @@ textarea {
 }
 
 .about-values {
-  max-width: 1300px;
+  max-width: 1400px;
   margin: 30px auto 20px;
   padding: 40px 6%;
+  width: 100%;
+
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   background-size: cover;
@@ -756,13 +759,17 @@ textarea {
   }
 
   .about-story-image {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
 
   .about-story-image img {
     width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 14px;
   }
-
   .about-values {
     gap: 28px;
   }
