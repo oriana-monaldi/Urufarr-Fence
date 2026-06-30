@@ -14,10 +14,10 @@ import logoPresupuesto from "../assets/logoPresupuesto.png";
 import horses from "../assets/horses.png";
 import experience from "../assets/experience.png";
 import fondo from "../assets/fondo.png";
-
 const featureItems = {
   en: [
     { icon: logoCasa, title: "RESIDENTIAL & COMMERCIAL FENCING" },
+    { icon: logoLupa, title: "DETAILED WORK" },
     { icon: logoCerca, title: "WOOD & WIRE FENCING" },
     { icon: logoCheck, title: "INSTALLATION" },
     { icon: logoPresupuesto, title: "REPAIR" },
@@ -32,7 +32,6 @@ const featureItems = {
     { icon: logoPersonas, title: "LIMPIEZA" },
   ],
 };
-
 const text = {
   en: {
     nav: ["HOME", "ABOUT US", "SERVICES", "GALLERY", "CONTACT"],
