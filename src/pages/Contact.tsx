@@ -9,7 +9,8 @@ import logoWsp from "../assets/logoWsp.png";
 import logoFacebook from "../assets/logoFacebook.png";
 import logoTelefono from "../assets/logoTelefono.png";
 import logoEmail from "../assets/logoEmail.png";
-import logoIdiomas from "../assets/logoIdiomas.png";
+import logoPersona from "../assets/logoPersona.png";
+import logoMensaje from "../assets/logoMensaje.png";
 
 const text = {
   en: {
@@ -147,9 +148,11 @@ ${message}
 
           <div className="contact-form-card">
             <h2>{t.formTitle}</h2>
+
             <form onSubmit={handleSubmit} className="contact-form">
               <div className="form-row">
                 <div className="input-box">
+                  <img src={logoPersona} alt="" className="input-icon" />
                   <input
                     type="text"
                     placeholder={t.name}
@@ -160,6 +163,7 @@ ${message}
                 </div>
 
                 <div className="input-box">
+                  <img src={logoEmail} alt="" className="input-icon" />
                   <input
                     type="email"
                     placeholder={t.emailPlaceholder}
@@ -171,6 +175,7 @@ ${message}
               </div>
 
               <div className="input-box">
+                <img src={logoTelefono} alt="" className="input-icon" />
                 <input
                   type="tel"
                   placeholder={t.phone}
@@ -180,6 +185,11 @@ ${message}
               </div>
 
               <div className="input-box textarea-box">
+                <img
+                  src={logoMensaje}
+                  alt=""
+                  className="input-icon textarea-icon"
+                />
                 <textarea
                   placeholder={t.message}
                   value={message}
