@@ -11,7 +11,6 @@ import logoLupa from "../assets/logoLupa.png";
 import logoPersonas from "../assets/logoPersonas.png";
 import logoPresupuesto from "../assets/logoPresupuesto.png";
 import horses from "../assets/horses.png";
-import experience from "../assets/experience.png";
 import fondo from "../assets/fondo.png";
 
 type PageProps = {
@@ -187,7 +186,7 @@ function Homes({ lang, setLang }: PageProps) {
         </section>
 
         <section className="experience-section">
-          <img src={experience} alt="Experience" />
+          <img src={fondo} alt="Experience" />
 
           <div className="experience-content">
             <h2>{t.expTitle}</h2>
