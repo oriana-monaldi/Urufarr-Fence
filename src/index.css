@@ -508,10 +508,10 @@ textarea {
 }
 
 .about-value-card img {
-  width: 56px;
-  height: 56px;
+  width: 58px;
+  height: 58px;
   object-fit: contain;
-  margin-bottom: 18px;
+  filter: brightness(0) invert(1);
 }
 
 .about-value-card h3 {

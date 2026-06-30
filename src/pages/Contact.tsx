@@ -161,7 +161,6 @@ ${message}
                     required
                   />
                 </div>
-
                 <div className="input-box">
                   <img src={logoEmail} alt="" className="input-icon" />
                   <input
