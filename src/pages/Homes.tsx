@@ -2,7 +2,7 @@ import "../index.css";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
+import SEO from "../components/SEO";
 import imgNavbar from "../assets/imgNavbar.png";
 import logoCasa from "../assets/logoCasa.png";
 import logoCerca from "../assets/logoCerca.png";
@@ -124,6 +124,24 @@ function Homes({ lang, setLang }: PageProps) {
 
   return (
     <>
+      <SEO
+        title={
+          lang === "en"
+            ? "Urufarr Fences | Fence Installation, Repair & Cleaning"
+            : "Urufarr Fences | Instalación, Reparación y Limpieza de Cercas"
+        }
+        description={
+          lang === "en"
+            ? "Professional residential, commercial and farm fencing. Fence installation, repair and cleaning with free estimates."
+            : "Instalación, reparación y limpieza profesional de cercas para propiedades residenciales, comerciales y rurales. Presupuestos gratuitos."
+        }
+        canonical="/"
+        keywords={
+          lang === "en"
+            ? "Fence Installation, Fence Repair, Fence Cleaning, Wood Fence, Farm Fence, Commercial Fence, Georgia"
+            : "Instalación de cercas, Reparación de cercas, Limpieza de cercas, Cercas de madera, Cercas rurales, Cercas comerciales, Georgia"
+        }
+      />
       <section
         className="hero"
         style={{

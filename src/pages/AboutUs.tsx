@@ -2,6 +2,7 @@ import "../index.css";
 
 import PageHero from "../components/Hero";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
 
 import fondo from "../assets/fondo.png";
 import hero from "../assets/fondoCampo.png";
@@ -78,6 +79,24 @@ function AboutUs({ lang, setLang }: PageProps) {
 
   return (
     <>
+      <SEO
+        title={
+          lang === "en"
+            ? "About Us | Urufarr Fences"
+            : "Nosotros | Urufarr Fences"
+        }
+        description={
+          lang === "en"
+            ? "Learn more about Urufarr Fences, a family-owned fencing company committed to quality workmanship and customer satisfaction."
+            : "Conocé más sobre Urufarr Fences, una empresa familiar especializada en cercas residenciales, comerciales y rurales."
+        }
+        canonical="/about"
+        keywords={
+          lang === "en"
+            ? "About Urufarr Fences, Family Owned Fence Company, Georgia"
+            : "Empresa de cercas, Empresa familiar, Cercas Georgia"
+        }
+      />
       <PageHero
         hero={hero}
         lang={lang}
