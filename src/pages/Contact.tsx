@@ -80,7 +80,9 @@ Email: ${email}
 Mensaje:
 ${message}`;
 
-    window.location.href = `mailto:urufarrfences.adm@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:urufarrfences.adm@gmail.com?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(body)}`;
   };
 
   return (
@@ -88,21 +90,22 @@ ${message}`;
       <SEO
         title={
           lang === "en"
-            ? "About Us | Urufarr Fences"
-            : "Nosotros | Urufarr Fences"
+            ? "Contact Us | Urufarr Fences"
+            : "Contacto | Urufarr Fences"
         }
         description={
           lang === "en"
-            ? "Learn more about Urufarr Fences, a family-owned fencing company committed to quality workmanship and customer satisfaction."
-            : "Conocé más sobre Urufarr Fences, una empresa familiar especializada en cercas residenciales, comerciales y rurales."
+            ? "Contact Urufarr Fences in Evansville, Indiana for a free fencing quote."
+            : "Contactá a Urufarr Fences en Evansville, Indiana para solicitar un presupuesto gratuito."
         }
-        canonical="/about"
+        canonical="/contact"
         keywords={
           lang === "en"
-            ? "About Urufarr Fences, Family Owned Fence Company, Georgia"
-            : "Empresa de cercas, Empresa familiar, Cercas Georgia"
+            ? "Contact Urufarr Fences, Fence Contractor Evansville Indiana, Free Fence Quote"
+            : "Contacto Urufarr Fences, Presupuesto de cercas, Cercas Evansville Indiana"
         }
       />
+
       <PageHero
         hero={hero}
         lang={lang}
@@ -165,64 +168,74 @@ ${message}`;
             </div>
           </div>
 
-          <div className="contact-form-card">
-            <h2>{t.formTitle}</h2>
+          <div className="contact-form-wrapper">
+            <div className="contact-form-card">
+              <h2>{t.formTitle}</h2>
 
-            <form onSubmit={handleSubmit} className="contact-form">
-              <div className="form-row">
+              <form onSubmit={handleSubmit} className="contact-form">
+                <div className="form-row">
+                  <div className="input-box">
+                    <img
+                      src={logoPersona}
+                      alt=""
+                      className="input-icon person-icon"
+                    />
+                    <input
+                      type="text"
+                      placeholder={t.name}
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      required
+                    />
+                  </div>
+
+                  <div className="input-box">
+                    <img src={logoEmail} alt="" className="input-icon" />
+                    <input
+                      type="email"
+                      placeholder={t.emailPlaceholder}
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                    />
+                  </div>
+                </div>
+
                 <div className="input-box">
+                  <img src={logoTelefono} alt="" className="input-icon" />
+                  <input
+                    type="tel"
+                    placeholder={t.phone}
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                  />
+                </div>
+
+                <div className="input-box textarea-box">
                   <img
-                    src={logoPersona}
+                    src={logoMensaje}
                     alt=""
-                    className="input-icon person-icon"
+                    className="input-icon textarea-icon"
                   />
-                  <input
-                    type="text"
-                    placeholder={t.name}
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
+                  <textarea
+                    placeholder={t.message}
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
                     required
                   />
                 </div>
 
-                <div className="input-box">
-                  <img src={logoEmail} alt="" className="input-icon" />
-                  <input
-                    type="email"
-                    placeholder={t.emailPlaceholder}
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="input-box">
-                <img src={logoTelefono} alt="" className="input-icon" />
-                <input
-                  type="tel"
-                  placeholder={t.phone}
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                />
-              </div>
-
-              <div className="input-box textarea-box">
-                <img
-                  src={logoMensaje}
-                  alt=""
-                  className="input-icon textarea-icon"
-                />
-                <textarea
-                  placeholder={t.message}
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  required
-                />
-              </div>
-
-              <button type="submit">{t.button}</button>
-            </form>
+                <button type="submit">{t.button}</button>
+              </form>
+            </div>
+            <div className="contact-map">
+              <iframe
+                title="Urufarr Fences Location"
+                src="https://www.google.com/maps?q=Evansville,+Indiana,+USA&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
           </div>
         </section>
       </main>

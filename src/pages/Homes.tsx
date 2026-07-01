@@ -127,19 +127,19 @@ function Homes({ lang, setLang }: PageProps) {
       <SEO
         title={
           lang === "en"
-            ? "Urufarr Fences | Fence Installation, Repair & Cleaning"
-            : "Urufarr Fences | Instalación, Reparación y Limpieza de Cercas"
+            ? "About Us | Urufarr Fences"
+            : "Nosotros | Urufarr Fences"
         }
         description={
           lang === "en"
-            ? "Professional residential, commercial and farm fencing. Fence installation, repair and cleaning with free estimates."
-            : "Instalación, reparación y limpieza profesional de cercas para propiedades residenciales, comerciales y rurales. Presupuestos gratuitos."
+            ? "Learn more about Urufarr Fences, a family-owned fencing company proudly serving Evansville, Indiana. We specialize in residential, commercial, and agricultural fencing with quality craftsmanship and reliable service."
+            : "Conocé más sobre Urufarr Fences, una empresa familiar que brinda servicios de cercado en Evansville, Indiana, especializada en cercas residenciales, comerciales y rurales con calidad y compromiso."
         }
-        canonical="/"
+        canonical="/about"
         keywords={
           lang === "en"
-            ? "Fence Installation, Fence Repair, Fence Cleaning, Wood Fence, Farm Fence, Commercial Fence, Georgia"
-            : "Instalación de cercas, Reparación de cercas, Limpieza de cercas, Cercas de madera, Cercas rurales, Cercas comerciales, Georgia"
+            ? "About Urufarr Fences, Family Owned Fence Company, Evansville, Indiana, Fence Contractor Evansville, Residential Fencing, Commercial Fencing, Agricultural Fencing"
+            : "Empresa de cercas, Empresa familiar, Evansville, Indiana, Cercas residenciales, Cercas comerciales, Cercas rurales"
         }
       />
       <section

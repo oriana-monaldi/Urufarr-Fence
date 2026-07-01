@@ -87,14 +87,14 @@ function AboutUs({ lang, setLang }: PageProps) {
         }
         description={
           lang === "en"
-            ? "Learn more about Urufarr Fences, a family-owned fencing company committed to quality workmanship and customer satisfaction."
-            : "Conocé más sobre Urufarr Fences, una empresa familiar especializada en cercas residenciales, comerciales y rurales."
+            ? "Learn more about Urufarr Fences, a family-owned fencing company proudly serving Evansville, Indiana. We specialize in residential, commercial, and agricultural fencing with quality craftsmanship and reliable service."
+            : "Conocé más sobre Urufarr Fences, una empresa familiar que brinda servicios de cercado en Evansville, Indiana, especializada en cercas residenciales, comerciales y rurales con calidad y compromiso."
         }
         canonical="/about"
         keywords={
           lang === "en"
-            ? "About Urufarr Fences, Family Owned Fence Company, Georgia"
-            : "Empresa de cercas, Empresa familiar, Cercas Georgia"
+            ? "About Urufarr Fences, Family Owned Fence Company, Evansville, Indiana, Fence Contractor Evansville, Residential Fencing, Commercial Fencing, Agricultural Fencing"
+            : "Empresa de cercas, Empresa familiar, Evansville, Indiana, Cercas residenciales, Cercas comerciales, Cercas rurales"
         }
       />
       <PageHero
