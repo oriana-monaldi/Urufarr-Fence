@@ -124,9 +124,7 @@ ${message}`;
               </div>
               <div>
                 <h3>{t.call}</h3>
-                <p>+1 (770) 470 469-7225</p>
-                <p>+1 (770) 786 444-0027</p>
-                <p>+1 (770) 678 334-9250</p>
+                <p>+1 (812) 480-8561</p>{" "}
               </div>
             </div>
 
@@ -152,7 +150,7 @@ ${message}`;
             </div>
 
             <div className="contact-socials">
-              <a href="https://wa.link/b6tx71" target="_blank" rel="noreferrer">
+              <a href="https://wa.link/0t6mqr" target="_blank" rel="noreferrer">
                 <img src={logoWsp} alt="WhatsApp" />
                 <span>WHATSAPP</span>
               </a>
