@@ -42,9 +42,8 @@ function Footer({ lang }: FooterProps) {
     >
       <div className="contact-column">
         <h4>{t.contactUs}</h4>
-        <p>+1 (770) 470 469-7225</p>
-        <p>+1 (770) 786 444-0027</p>
-        <p>+1 (770) 678 334-9250</p>
+        <p>+1 (812) 480-8561</p>
+
         <p>urufarrfences.adm@gmail.com</p>
       </div>
 
