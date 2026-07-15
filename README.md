@@ -20,18 +20,6 @@ The website showcases the company's services, portfolio, and contact information
 
 ---
 
-## 🛠️ Built With
-
-- React
-- TypeScript
-- Vite
-- CSS3
-- React Router
-- React Helmet Async
-- AOS (Animate On Scroll)
-  
----
-
 ## 🎯 Main Pages
 
 - Home
@@ -63,4 +51,3 @@ https://urufarr-fences.com/
 
 This project was developed exclusively for Urufarr Fences.
 
-Unauthorized copying, redistribution, or commercial use is prohibited.
